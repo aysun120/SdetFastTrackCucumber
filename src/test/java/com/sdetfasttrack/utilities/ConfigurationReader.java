@@ -1,4 +1,4 @@
-package com.sdet_fast_track.utilities;
+package com.sdetfasttrack.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

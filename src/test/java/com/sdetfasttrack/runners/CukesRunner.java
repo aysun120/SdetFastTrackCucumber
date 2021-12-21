@@ -1,4 +1,4 @@
-package com.sdet_fast_track.runners;
+package com.sdetfasttrack.runners;
 
 
 import io.cucumber.junit.Cucumber;
@@ -13,10 +13,9 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"
         },
         features = "src/test/resources/features",
-        glue = "com/sdet_fast_track/step_definitions",
-        monochrome = true,
+        glue = "com/sdetfasttrack/step_definitions",
         dryRun = false,
-        tags = "@wip"
+        tags = "@student"
 )
 public class CukesRunner {
 }

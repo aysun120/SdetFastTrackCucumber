@@ -1,8 +1,8 @@
-package com.sdet_fast_track.step_definitions;
+package com.sdetfasttrack.step_definitions;
 
 
-import com.sdet_fast_track.utilities.BrowserUtils;
-import com.sdet_fast_track.utilities.Driver;
+import com.sdetfasttrack.utilities.BrowserUtils;
+import com.sdetfasttrack.utilities.Driver;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
