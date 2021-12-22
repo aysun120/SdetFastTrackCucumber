@@ -44,4 +44,26 @@ public class LoginStepDefinitions {
 
     }
 
+    @When("librarian enters username")
+    public void librarian_enters_username() {
+        loginPage.inputEmail.sendKeys(ConfigurationReader.getProperty("libraryUsername"));
+    }
+
+    @When("librarian enters password")
+    public void librarian_enters_password() {
+        loginPage.inputPassword.sendKeys(ConfigurationReader.getProperty("libraryPassword"));
+    }
+    @When("librarian clicks login button")
+    public void librarian_clicks_login_button() {
+        loginPage.loginButton.click();
+    }
+    @Then("librarian should see dashboard")
+    public void librarian_should_see_dashboard() {
+        WebDriverWait wait=new WebDriverWait(Driver.getDriver(),10);
+        wait.until(ExpectedConditions.titleIs("Library"));
+        String expectedTitle="Library";
+        String actualTitle=Driver.getDriver().getTitle();
+        assertEquals("Title did not match!",expectedTitle,actualTitle);
+    }
+
 }
