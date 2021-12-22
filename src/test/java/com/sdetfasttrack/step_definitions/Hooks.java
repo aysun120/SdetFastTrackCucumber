@@ -11,6 +11,7 @@ public class Hooks {
 
     @Before
     public void setUpScenario(){
+
         System.out.println("------Setting up browser with further details...");
     }
 

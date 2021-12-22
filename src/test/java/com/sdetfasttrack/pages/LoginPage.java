@@ -18,5 +18,17 @@ public class LoginPage {
      * 2 scenarios.
      */
 
+    public LoginPage(){
+        PageFactory.initElements(Driver.getDriver(),this);
+    }
+
+    @FindBy(id="inputEmail")
+    public WebElement inputEmail;
+
+    @FindBy(id="inputPassword")
+    public WebElement inputPassword;
+
+    @FindBy(xpath="//button[.='Sign in']")
+    public WebElement loginButton;
 
 }
