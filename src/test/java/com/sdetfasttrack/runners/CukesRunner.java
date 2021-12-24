@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/sdetfasttrack/step_definitions",
         dryRun = false,
-        tags = "@student or @librarian"
+        tags = "@student"
 )
 public class CukesRunner {
 }

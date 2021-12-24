@@ -18,6 +18,17 @@ public class LoginPage {
      * 2 scenarios.
      */
 
+    /**
+     * TC#2:
+     * Task summary:
+     * -> Create new feature file named LoginWithParameters.feature
+     * -> Create 2 scenarios for different user logins for: librarian, student, with
+     * parameterization.
+     * -> Create new snippets and implement them in Login_StepDefinitions class and
+     * implement these 2 scenarios
+     */
+
+
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
