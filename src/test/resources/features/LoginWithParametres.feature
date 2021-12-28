@@ -11,7 +11,7 @@ Feature: Library app login
     And student click login button
     Then user student should see dashboard
 
-    @student @librarian
+
   Scenario: Login as Librarian
     When student enters username "librarian1261@library" and password "ICf9pm9S"
     And student click login button
