@@ -1,6 +1,7 @@
 package com.sdetfasttrack.tests;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
@@ -11,41 +12,64 @@ import java.io.IOException;
 
 public class ExcelWrite {
 
+    XSSFWorkbook workbook;
+    XSSFSheet sheet;
+    XSSFRow row;
+    XSSFCell cell;
+
 
     @Test
-    public void excelWrite() throws IOException {
+    public void excel_writing_test() throws IOException {
+        String path = "SampleData.xlsx";
 
-        FileInputStream fileInputStream=new FileInputStream("SampleData.xlsx");
-        XSSFWorkbook workbook=new XSSFWorkbook((fileInputStream));
-        XSSFSheet sheet=workbook.getSheet("Employees");
+        // to read from excel we need to load it to FileInputStream
+        FileInputStream fileInputStream = new FileInputStream(path);
+        // workbook > sheet > row > cell
+        workbook = new XSSFWorkbook(fileInputStream);
+        //get the seet
+        sheet = workbook.getSheet("Employees");
 
-        XSSFCell keerthi=sheet.getRow(4).getCell(1);
-        keerthi.setCellValue("Shantel");
+        /**
+         * King's row
+         */
+        row = sheet.getRow(1);
 
-        System.out.println("After changing lastName: "+keerthi);
+        //King;s cell
+        cell = row.getCell(1);
 
-        // Change Dynamically Vinod's Job_ID to be BA/QA
+        XSSFCell adamsCell = sheet.getRow(2).getCell(0);
 
-        int rowNum= sheet.getLastRowNum();
+        System.out.println("Before: "+ adamsCell);
 
-        for (int i = 0; i <rowNum ; i++) {
+        //this method will override existing cell
+        adamsCell.setCellValue("CodingHot");
+        System.out.println("After: "+adamsCell);
 
-            if(sheet.getRow(i).getCell(0).toString().equals("Vinod")){
-                sheet.getRow(i).getCell(2).setCellValue("BA/QA");
+        // TODO: CHANGE STEVEN'S NAME TO DONALD
+
+
+        for (int rowNum = 0; rowNum <sheet.getLastRowNum() ; rowNum++) {
+
+            if(sheet.getRow(rowNum).getCell(0).toString().equals("Steven")) {
+                sheet.getRow(rowNum).getCell(0).setCellValue("Donald");
             }
-
         }
 
 
 
 
+        //Use FileOutputStream to push changes
+        FileOutputStream fileOutputStream = new FileOutputStream(path);
+        //Write to file using FileOutputStream
+        workbook.write(fileOutputStream);
 
-     FileOutputStream fileOutputStream = new FileOutputStream("SampleData.xlsx");
-     workbook.write(fileOutputStream);
+        fileInputStream.close();
+        fileOutputStream.close();
+        workbook.close();
 
-     fileInputStream.close();
-     fileOutputStream.close();
-     workbook.close();
+
+
+
 
     }
 }
