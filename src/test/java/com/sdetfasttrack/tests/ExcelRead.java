@@ -27,14 +27,14 @@ public class ExcelRead {
         XSSFSheet sheet = workbook.getSheet("Employees");
 
         //<3> Select row and cell
-        //Print out Steven;s cell
+        //Print out Mary's cell
         //Indexes start from 0
         System.out.println("sheet.getRow(1).getCell(0) = " + sheet.getRow(1).getCell(0));
 
-        //print Singer
+        //print Developer
         System.out.println("sheet.getRow(3).getCell(2) = " + sheet.getRow(3).getCell(2));
 
-        //print Orkhan
+        //print Lee
         System.out.println("sheet.getRow(4).getCell(0) = " + sheet.getRow(4).getCell(0));
 
         // Return the count of used cells only
@@ -50,20 +50,20 @@ public class ExcelRead {
         int lastUsedRow = sheet.getLastRowNum();
         System.out.println("lastUsedRow = " + lastUsedRow);
 
-        //TODO: 1 Create a logic to print Orkhan's name DYNAMICALLY
+        //TODO: 1 Create a logic to print Vinod's name DYNAMICALLY
 
         for (int rowNum = 0; rowNum < usedRows; rowNum++) {
 
-            if(sheet.getRow(rowNum).getCell(0).toString().equals("Orkhan")){
+            if(sheet.getRow(rowNum).getCell(0).toString().equals("Vinod")){
                 System.out.println("Apache POI found you! Name is " +sheet.getRow(rowNum).getCell(0) );
             }
         }
 
-        //TODO: 2 - CREATE A LOGIC TO PRINT OUT STEVEN KING'S JOB_ID
-        // CHECK IF NAME IS STEVEN --> PRINT OUT JOB_ID
+        //TODO: 2 - CREATE A LOGIC TO PRINT OUT Mansoor Khan'S JOB_ID
+        // CHECK IF NAME IS Mansoor --> PRINT OUT JOB_ID
 
         for (int rowNum = 0; rowNum < usedRows; rowNum++) {
-            if(sheet.getRow(rowNum).getCell(0).toString().equals("Steven")){
+            if(sheet.getRow(rowNum).getCell(0).toString().equals("Mansoor")){
                 System.out.println("Steven's JOB_ID is " + sheet.getRow(rowNum).getCell(2));
             }
         }

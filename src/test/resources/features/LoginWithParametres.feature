@@ -5,7 +5,7 @@ Feature: Library app login
   Background: user is on the login page
     Given user is on the library login page
 
-  @student @smoke @regression
+
   Scenario: Login as a student
     When student enters username "student3367@library" and password "GbZeYc7z"
     And student click login button

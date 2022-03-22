@@ -38,7 +38,7 @@ public class LoginStepDefinitions {
     public void student_should_see_dashboard() {
       WebDriverWait wait=new WebDriverWait(Driver.getDriver(),10);
       wait.until(ExpectedConditions.titleIs("Library"));
-      String expectedTitle="Library";
+      String expectedTitle="Librar";
       String actualTitle=Driver.getDriver().getTitle();
       assertEquals("Title did not match!",expectedTitle,actualTitle);
 
