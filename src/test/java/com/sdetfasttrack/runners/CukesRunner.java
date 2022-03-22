@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/sdetfasttrack/step_definitions",
-        dryRun =true,
-        tags = "@google"
+        dryRun =false,
+        tags = ""
 )
 public class CukesRunner {
 }
